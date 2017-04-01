@@ -1,0 +1,28 @@
+import java.util.Vector;
+
+public class Utility {
+
+	public static int minDepth(Node<Integer> root){
+		if(root == null)
+		{
+			return 0;
+		}
+		if(root.left == null && root.right == null)
+		{
+			return 1;
+		}
+		if(root.left == null)
+		{
+			return 1+minDepth(root.right);
+		}
+		if(root.right == null)
+			return 1+minDepth(root.left);
+		
+		return Math.min(minDepth(root.left), minDepth(root.right));
+	}
+	
+	public static Vector<Node<Integer>> minDepthNode(Node<Integer> root){
+		
+		return null;
+	}
+}
